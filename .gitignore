@@ -1,4 +1,5 @@
 .DS_Store
+app/config.js
 schema/*
 app/node_modules/*
 app/public_html/vendor/*
