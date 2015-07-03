@@ -1,0 +1,33 @@
+{
+  "name": "Goalerfy",
+  "version": "0.1.0",
+  "authors": [
+    "Robert MacInnis <rob.macinnis@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public_html/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.1",
+    "angular-animate": "~1.4.1",
+    "angular-cookies": "~1.4.1",
+    "angular-mocks": "~1.4.1",
+    "angular-resource": "~1.4.1",
+    "angular-route": "~1.4.1",
+    "angular-sanitize": "~1.4.1",
+    "angular-touch": "~1.4.1",
+    "angular-ui-sortable": "~0.13.4",
+    "angular-xeditable": "~0.1.9",
+    "bootstrap": "~3.3.5",
+    "bootstrap-sass-official": "~3.3.5",
+    "font-awesome": "~4.3.0",
+    "jquery": "~2.1.4",
+    "jquery-ui": "~1.11.4"
+  }
+}

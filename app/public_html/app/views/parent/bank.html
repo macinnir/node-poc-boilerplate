@@ -1,0 +1,48 @@
+<div class="container">
+
+  <h2>{{title}}</h2>
+  <h3>Points - {{balances.points}}</h3>
+  <form style="display: none; " ng-submit="addPointsTransaction()">
+	<label>Withdrawal</label><input type="text" ng-model="pointsTransaction.withdrawal" placeholder="Withdrawal" />
+  	<label>Deposit</label><input type="text" ng-model="pointsTransaction.deposit" placeholder="Deposit" />
+  	<label>Description</label><input type="text" ng-model="pointsTransaction.description" placeholder="description" />
+  	<button type="submit" class="btn btn-primary">Add</button>
+  </form>
+
+  <table class="table">
+    <thead>
+    <tr><td>Date</td><td>Description</td><td>Withdrawl</td><td>Deposit</td><td>Balance</td></tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="p in pointsTransactions">
+    	<td>{{p.dateCreated | simpleDate}}</td>
+    	<td>{{p.description}}</td>
+    	<td>{{p.withdrawal}}</td>
+    	<td>{{p.deposit}}</td>
+    	<td>{{p.balance}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h3>Money  - {{balances.money | currency}}</h3>
+  <form style="display: none; " ng-submit="addMoneyTransaction()">
+	<label>Withdrawal</label><input type="text" ng-model="moneyTransaction.withdrawal" placeholder="Withdrawal" />
+  	<label>Deposit</label><input type="text" ng-model="moneyTransaction.deposit" placeholder="Deposit" />
+  	<label>Description</label><input type="text" ng-model="moneyTransaction.description" placeholder="description" />
+  	<button type="submit" class="btn btn-primary">Add</button>
+  </form>
+  <table class="table">
+    <thead>
+    <tr><td>Date</td><td>Description</td><td>Withdrawl</td><td>Deposit</td><td>Balance</td></tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="m in moneyTransactions">
+    	<td>{{m.dateCreated | simpleDate}}</td>
+    	<td>{{m.description}}</td>
+    	<td>{{m.withdrawal}}</td>
+    	<td>{{m.deposit}}</td>
+    	<td>{{m.balance}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

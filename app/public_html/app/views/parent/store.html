@@ -1,0 +1,107 @@
+<h2>Store</h2>
+<div class="well">
+<form ng-submit="addProduct()">
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" ng-model="product.title" placeholder="Product Title" />
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" ng-model="product.description" placeholder="Product Description" />
+    </div>
+    <div class="form-group">
+        <label>Points</label>
+        <input type="text" class="form-control" ng-model="product.pricePoints" placeholder="0" />
+    </div>
+    <div class="form-group">
+        <label>Money</label>
+        <input type="text" class="form-control" ng-model="product.priceMoney" placeholder="$0.00" />
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+</form>
+</div>
+<h3>Products ({{products.length}})</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Title</td>
+            <td>Description</td>
+            <td>Points</td>
+            <td>Money</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+
+    <tr ng-show="!products.length">
+    	<td colspan="5">
+    		<div class="well">No Products</div>
+    	</td>
+    </tr>
+        <tr ng-show="products.length" ng-repeat="p in products">
+            <td>
+                <span editable-text="p.title" e-name="title" e-form="rowform" e-required>
+                	{{p.title}}
+                <span>
+            </td>
+            <td>
+                <span editable-text="p.description" e-name="description" e-form="rowform" e-required>
+                	{{p.description}}
+                </span>
+            </td>
+            <td>
+                <span editable-text="p.pricePoints" e-name="pricePoints" e-form="rowform">
+                	{{p.pricePoints}}
+                </span>
+            </td>
+            <td>
+                <span editable-text="p.priceMoney" e-name="priceMoney" e-form="rowform">
+                	{{p.priceMoney}}
+                </span>
+            </td>
+            <td style="white-space: nowrap;">
+                <form editable-form name="rowform" onbeforesave="updateProduct($index, p)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="product == p">
+                    <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+                        save
+                    </button>
+                    <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">cancel</button>
+                </form>
+                <div class="buttons" ng-show="!rowform.$visible">
+                    <button class="btn btn-primary" ng-click="rowform.$show()">edit</button>
+                    <button class="btn btn-danger" ng-click="deleteProduct($index)">del</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3>Purchased ({{purchasedProductsLength}})</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Title</td>
+            <td>Description</td>
+            <td>Points</td>
+            <td>Money</td>
+            <td>Purchased</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="p in purchasedProducts">
+            <td>
+                	{{p.title}}
+            </td>
+            <td>
+                	{{p.description}}
+            </td>
+            <td>
+                	{{p.pricePoints}}
+            </td>
+            <td>
+                	{{p.priceMoney}}
+            </td>
+            <td>
+            		{{p.datePurchased}}
+            </td>
+        </tr>
+    </tbody>
+</table>
