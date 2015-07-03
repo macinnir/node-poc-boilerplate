@@ -3,3 +3,4 @@ app/config.js
 schema/*
 app/node_modules/*
 app/public_html/vendor/*
+npm-debug.log
