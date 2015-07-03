@@ -2,5 +2,9 @@
 app/config.js
 schema/*
 app/node_modules/*
+<<<<<<< HEAD
 app/public_html/vendor/*
 npm-debug.log
+=======
+app/public_html/vendor/*
+>>>>>>> f3de3bf5baed63d3d966dcb91017015ef57bedee
