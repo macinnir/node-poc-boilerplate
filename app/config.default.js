@@ -2,7 +2,7 @@
 
 var config = {
 	db: {
-		host: 'localhost',
+		host: '[DATABASE_HOST]',
 		user: '[DATABASE_USERNAME]',
 		password: '[DATABASE_PASSWORD]',
 		database: '[DATABASE_NAME]'
