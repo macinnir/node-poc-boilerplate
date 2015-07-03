@@ -1,0 +1,4 @@
+.DS_Store
+schema/*
+app/node_modules/*
+app/public_html/vendor/*
