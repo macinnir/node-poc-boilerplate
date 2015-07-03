@@ -1,0 +1,65 @@
+<h3>Chores({{chores.length}})</h3>
+<form role="form" ng-submit="addChore()">
+    <div class="row">
+        <div class="input-group">
+            <input type="text" ng-model="chore.name" placeholder="What needs to be done?" class="form-control">
+            <input type="text" ng-model="chore.description" placeholder="Description" class="form-control">
+            <input type="text" ng-model="chore.priceMoney" placeholder="Money" class="form-control">
+            <input type="text" ng-model="chore.pricePoints" placeholder="Points" class="form-control">
+            <span class="input-group-btn">
+              <input type="submit" class="btn btn-primary" value="Add">
+        </span>
+        </div>
+    </div>
+</form>
+<div ui-sortable ng-model="chores">
+    <table class="table">
+        <thead>
+            <tr>
+            	   <th>Date</th>
+                <th>Chore</th>
+                <th>Description</th>
+                <th>Money</th>
+                <th>Points</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="c in chores">
+            	    <td>{{ c.dateCreated | simpleDate }}</td>
+                <td><span editable-text="c.name" e-name="name" e-form="cform">{{c.name}}</span></td>
+                <td><span editable-text="c.description" e-name="description" e-form="cform">{{c.description}}</span></td>
+                <td><span editable-text="c.priceMoney" e-name="priceMoney" e-form="cform">{{c.priceMoney}}</span></td>
+                <td><span editable-text="c.pricePoints" e-name="pricePoints" e-form="cform">{{c.pricePoints}}</span></td>
+                <td style="white-space: nowrap;">
+                    <form editable-form name="cform" onbeforesave="updateChore($index, c)" ng-show="cform.$visible" class="form-buttons form-inline" shown="chore == c ">
+                        <button type="submit" ng-disabled="cform.$waiting" class="btn btn-primary">
+                            save
+                        </button>
+                        <button type="button" ng-disabled="cform.$waiting" ng-click="cform.$cancel()" class="btn btn-default">cancel</button>
+                    </form>
+                    <div class="buttons" ng-show="!cform.$visible && !c.finished">
+                        <button class="btn btn-primary" ng-click="cform.$show()">edit</button>
+                        <button class="btn btn-danger" ng-click="removeChore($index)" aria-label="Remove">del</button>
+                    </div>
+                </td>
+                                <td>
+                	<button type="button" ng-show="!c.finished" class="btn btn-default" ng-click="finishChore($index)">Finish</button>
+                	<span ng-show="c.finished">Finished!</span>
+                </td>
+
+                <td>
+                	<button type="button" ng-show="!c.approved" class="btn btn-default" ng-click="approveChore($index)">Approve</button>
+                	<span ng-show="c.approved">Approved!</span>
+                </td>
+                <td>
+                	<button type="button" class="btn btn-default" ng-click="duplicateChore($index)">
+                		<span class="fa fa-copy"></span>
+                	</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <input type="checkbox" name="approved" ng-change="updateChore($index, chore)" ng-model="chore.approved" ng-true-value="1" ng-false-value="0" /> Finished: -->
+    <!-- <input type="checkbox" name="finished" ng-change="updateChore($index, chore)" ng-model="chore.finished" ng-true-value="1" ng-false-value="0" /> -->
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+
+  <h2>{{title}}</h2>
+
+  <h3>Points - {{balances.points}}</h3>
+
+  <table class="table">
+    <thead>
+    <tr><td>Date</td><td>Description</td><td>Withdrawl</td><td>Deposit</td><td>Balance</td></tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="p in pointsTransactions">
+    	<td>{{p.date}}</td>
+    	<td>{{p.description}}</td>
+    	<td>{{p.withdrawal}}</td>
+    	<td>{{p.deposit}}</td>
+    	<td>{{p.balance}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h3>Money - {{balances.money}}</h3>
+  <table class="table">
+    <thead>
+    <tr><td>Date</td><td>Description</td><td>Withdrawl</td><td>Deposit</td><td>Balance</td></tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="m in moneyTransactions">
+    	<td>{{m.date}}</td>
+    	<td>{{m.description}}</td>
+    	<td>{{m.withdrawal}}</td>
+    	<td>{{m.deposit}}</td>
+    	<td>{{m.balance}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
