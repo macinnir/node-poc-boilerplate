@@ -5,4 +5,4 @@ Boilerplate Node project for POC (proof of concept) micro-projects.
 # Install
 ```
 git clone https://github.com/macinnir/node-poc-boilerplate.git [project name] && cd [project name]
-./install.sh
+./scripts/install.sh
