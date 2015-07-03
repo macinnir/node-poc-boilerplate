@@ -17,7 +17,7 @@ sed -i -- "s/\[DATABASE_NAME\]/"$DATABASE_SCHEMA"/g" app/config.js
 git init
 git add --all
 git commit -m 'initial commit'
-cd [project name]/app
+cd app
 npm install
 bower install
 node server.js
