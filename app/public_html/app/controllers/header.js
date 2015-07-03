@@ -11,7 +11,7 @@ angular.module( 'test2App' ).controller( 'HeaderCtrl', function( $scope, $locati
         $scope.roles = [ 'parent', 'child' ];
         var user = userService.getUser();
         $scope.user = userService.getUser();
-        $scope.role = $scope.user.role;
+        $scope.role = $scope.user && angular.isDefined($scope.user.role) ? $scope.user.role : 'parent';
         $scope.menuItems = {
                 'child': [
                 {

@@ -1,0 +1,26 @@
+<h3>Chores({{chores.length}})</h3>
+
+<div ui-sortable ng-model="chores">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Chore</th>
+                <th>Description</th>
+                <th>Money</th>
+                <th>Points</th>
+                <th>Finished</th>
+                <th>Approved</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="c in chores">
+                <td>{{c.name}}</td>
+                <td>{{c.description}}</td>
+                <td>{{c.priceMoney}}</td>
+                <td>{{c.pricePoints}}</td>
+                <td><span ng-show="c.finished">Finished</span><button type="button" ng-hide="c.finished" class="btn btn-primary" ng-click="finishChore($index)">Finish</button></td>
+                <td><span ng-show="c.approved">Approved!</span><span ng-show="!c.approved">not yet...</span></td>
+
+            </tr>
+        </tbody>
+    </table>

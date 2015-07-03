@@ -11,6 +11,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="vendor/angular-xeditable/dist/css/xeditable.css" />
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap-theme.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
@@ -63,9 +64,10 @@
     </div>
     <div class="footer">
         <div class="container">
-            <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+            It is not the critic who counts; not the man who points out how the strong man stumbles, or where the doer of deeds could have done them better. The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood; who strives valiantly; who errs, who comes short again and again, because there is no effort without error and shortcoming; but who does actually strive to do the deeds; who knows great enthusiasms, the great devotions; who spends himself in a worthy cause; who at the best knows in the end the triumph of high achievement, and who at the worst, if he fails, at least fails while daring greatly, so that his place shall never be with those cold and timid souls who neither know victory nor defeat.
         </div>
     </div>
+    <!-- bower:js -->
     <script src="vendor/jquery/dist/jquery.js"></script>
     <script src="vendor/angular/angular.js"></script>
     <script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
@@ -79,17 +81,33 @@
     <script src="vendor/angular-ui-sortable/sortable.js"></script>
     <script src="vendor/angular-local-storage/dist/angular-local-storage.js"></script>
     <script src="vendor/angular-xeditable/dist/js/xeditable.js"></script>
-
     <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <!-- controllers -->
 
+    <script src="app/app.js"></script>
+
+    <!-- filters -->
+    <script src="app/filters/date.js"></script>
+    <!-- endfilters -->
+
+    <!-- controllers -->
+    <script src="app/controllers/header.js"></script>
+    <script src="app/controllers/main.js"></script>
+    <script src="app/controllers/about.js"></script>
+    <script src="app/controllers/child/bank.js"></script>
+    <script src="app/controllers/child/work.js"></script>
+    <script src="app/controllers/child/store.js"></script>
+    <script src="app/controllers/parent/bank.js"></script>
+    <script src="app/controllers/parent/work.js"></script>
+    <script src="app/controllers/parent/store.js"></script>
     <!--endcontrollers-->
     <!--services-->
-    <!-- services -->
+    <script src="app/services/user.js"></script>
+    <script src="app/services/awards.js"></script>
+    <script src="app/services/chores.js"></script>
+    <script src="app/services/transactions.js"></script>
+    <script src="app/services/products.js"></script>
+    <!-- endservices -->
     <!-- endbuild -->
-    <script src="app/app.js"></script>
 
 </body>
 

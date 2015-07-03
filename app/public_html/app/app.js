@@ -27,41 +27,41 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'app/views/main.html',
         controller: 'MainCtrl'
       })
       .when('/child/store', {
-        templateUrl: 'views/child/store.html',
+        templateUrl: 'app/views/child/store.html',
         controller: 'ChildStoreCtrl'
 
       })
       .when('/child/bank', {
-        templateUrl: 'views/child/bank.html',
+        templateUrl: 'app/views/child/bank.html',
         controller: 'ChildBankCtrl',
 
       })
       .when('/child/work', {
-        templateUrl: 'views/child/work.html',
+        templateUrl: 'app/views/child/work.html',
         controller: 'ChildWorkCtrl',
 
       })
       .when('/parent/store', {
-        templateUrl: 'views/parent/store.html',
+        templateUrl: 'app/views/parent/store.html',
         controller: 'ParentStoreCtrl',
 
       })
       .when('/parent/bank', {
-        templateUrl: 'views/parent/bank.html',
+        templateUrl: 'app/views/parent/bank.html',
         controller: 'ParentBankCtrl',
 
       })
       .when('/parent/work', {
-        templateUrl: 'views/parent/work.html',
+        templateUrl: 'app/views/parent/work.html',
         controller: 'ParentWorkCtrl',
 
       })
       .when('/about', {
-        templateUrl: 'views/about.html',
+        templateUrl: 'app/views/about.html',
         controller: 'AboutCtrl'
       })
       .otherwise({

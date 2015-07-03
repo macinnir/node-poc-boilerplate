@@ -1,0 +1,75 @@
+<h2>{{title}}</h2>
+<div class="well">
+    <div class="row">
+        <div class="col-sm-6 text-right">Points</div>
+        <div class="col-sm-6 text-left">{{balances.points}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-right">Money</div>
+        <div class="col-sm-6 text-left">{{balances.money}}</div>
+    </div>
+</div>
+<h3>Products ({{products.length}})</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Title</td>
+            <td>Description</td>
+            <td>Points</td>
+            <td>Money</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="p in products">
+            <td>
+                	{{p.title}}
+            </td>
+            <td>
+                	{{p.description}}
+            </td>
+            <td>
+                	{{p.pricePoints}}
+            </td>
+            <td>
+                	{{p.priceMoney}}
+            </td>
+            <td style="white-space: nowrap;">
+                  <button class="btn btn-primary" ng-click="buyProduct($index)">Buy</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Purchased ({{purchasedProductsLength}})</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Title</td>
+            <td>Description</td>
+            <td>Points</td>
+            <td>Money</td>
+            <td>Purchased</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="p in purchasedProducts">
+            <td>
+                	{{p.title}}
+            </td>
+            <td>
+                	{{p.description}}
+            </td>
+            <td>
+                	{{p.pricePoints}}
+            </td>
+            <td>
+                	{{p.priceMoney}}
+            </td>
+            <td>
+            	{{p.datePurchased}}
+            </td>
+        </tr>
+    </tbody>
+</table>
